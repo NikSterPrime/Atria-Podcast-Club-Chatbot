@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Podcast Chatbot</title>
+  <style>
+    body { font-family: Arial; background: #f0f0f0; }
+    #chatbox { width: 400px; margin: 50px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .message { margin: 10px 0; }
+    .bot { color: blue; }
+    .user { color: green; text-align: right; }
+  </style>
+</head>
+<body>
+  <div id="chatbox">
+    <h2>🎙️ Podcast Chatbot</h2>
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="Ask me about podcasts..." style="width: 100%; padding: 10px;">
+  </div>
+
+  <script>
+    const input = document.getElementById("userInput");
+    const messages = document.getElementById("messages");
+
+    input.addEventListener("keydown", async (e) => {
+      if (e.key === "Enter" && input.value.trim()) {
+        const userMsg = input.value;
+        messages.innerHTML += `<div class='message user'>${userMsg}</div>`;
+        input.value = "";
+
+        const response = await fetch("http://localhost:5000/recommend", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: userMsg })
+        });
+        const data = await response.json();
+
+        let botMsg = data.results.length
+          ? data.results.map(p => `🎧 <b>${p.title}</b><br><a href="${p.spotify}">Spotify</a> | <a href="${p.youtube}">YouTube</a>`).join("<br><br>")
+          : "Sorry, I couldn't find anything for that.";
+
+        messages.innerHTML += `<div class='message bot'>${botMsg}</div>`;
+      }
+    });
+  </script>
+</body>
+</html>
