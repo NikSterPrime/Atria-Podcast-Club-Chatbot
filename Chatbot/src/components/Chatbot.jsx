@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/Chatbot.css';
 
-function Chatbot() {
+function Chatbot({ visible }) {
   const [query, setQuery] = useState('');
   const [responses, setResponses] = useState([
     {
@@ -15,45 +15,71 @@ function Chatbot() {
 
   const sendQuery = async () => {
     if (!query.trim()) return;
-
+  
     try {
       const res = await axios.post('http://localhost:5000/query', { query });
-      setResponses(res.data);
+  
+      if (res.data.length === 0) {
+        setResponses([
+          {
+            title: `😕 Sorry, I couldn't find any podcasts related to "${query}". Try asking about clubs, AI, events, or leadership.`,
+            spotify: "",
+            youtube: "",
+            type: "notfound"
+          }
+        ]);
+      } else {
+        setResponses(res.data);
+      }
+  
       setQuery('');
     } catch (error) {
       console.error("Error:", error);
-      setResponses([{ title: "Failed to fetch results", spotify: "#", youtube: "#" }]);
+      setResponses([
+        {
+          title: "🚨 Something went wrong. Please try again later.",
+          spotify: "",
+          youtube: "",
+          type: "error"
+        }
+      ]);
     }
   };
+  
 
   const openLink = (url) => {
     window.open(url, '_blank');
   };
 
   return (
-    <div className="chatbot-container">
+    <div className={`chatbot-container ${visible ? 'chatbot-show' : 'chatbot-hide'}`}>
       <div className="chatbot-header">🎙️ Atria Podcast Bot</div>
 
       <div className="chatbot-body">
-        {responses.length === 0 ? (
-          <p>No results yet. Ask something like "AI" or "gaming".</p>
-        ) : (
-          responses.map((item, index) => (
-            <div className={`chatbot-response ${
-              item.type === 'greeting' ? 'chatbot-greeting' : ''
-            }`} key={index}>
-              <strong>{item.title}</strong>
-              <div className="response-buttons">
-                {item.spotify && (
-                  <button onClick={() => openLink(item.spotify)}>🎧 Spotify</button>
-                )}
-                {item.youtube && (
-                  <button onClick={() => openLink(item.youtube)}>📺 YouTube</button>
-                )}
-              </div>
+        {responses.map((item, index) => (
+          <div
+            className={`chatbot-response ${
+    item.type === 'greeting'
+      ? 'chatbot-greeting'
+      : item.type === 'notfound'
+      ? 'chatbot-notfound'
+      : item.type === 'error'
+      ? 'chatbot-error'
+      : ''
+  }`}
+            key={index}
+          >
+            <strong>{item.title}</strong>
+            <div className="response-buttons">
+              {item.spotify && (
+                <button onClick={() => openLink(item.spotify)}>🎧 Spotify</button>
+              )}
+              {item.youtube && (
+                <button onClick={() => openLink(item.youtube)}>📺 YouTube</button>
+              )}
             </div>
-          ))
-        )}
+          </div>
+        ))}
       </div>
 
       <div className="chatbot-input">

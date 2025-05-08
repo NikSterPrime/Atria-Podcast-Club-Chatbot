@@ -1,6 +1,6 @@
 .chatbot-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     right: 20px;
     width: 350px;
     max-height: 500px;
@@ -8,11 +8,11 @@
     border: 1px solid #ccc;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
     z-index: 9999;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
   
   .chatbot-header {
@@ -101,5 +101,32 @@
   
   .chatbot-icon:hover {
     transform: scale(1.05);
+  }
+  /* Start hidden */
+.chatbot-hide {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Slide up when visible */
+  .chatbot-show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .chatbot-response.chatbot-greeting {
+    background-color: #e0f2fe;
+    font-style: italic;
+  }
+  
+  .chatbot-response.chatbot-notfound {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .chatbot-response.chatbot-error {
+    background-color: #fee2e2;
+    color: #991b1b;
   }
   

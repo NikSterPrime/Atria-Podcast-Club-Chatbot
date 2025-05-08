@@ -8,13 +8,13 @@ function App() {
 
   return (
     <>
-      {visible && <Chatbot />}
+      <Chatbot visible={visible} />
       <button
         className="chatbot-toggle-button"
         onClick={() => setVisible(!visible)}
       >
         <img
-          src={visible ? '/aditya.png' : '/aditya.png'}
+          src={visible ? '/iqra.png' : '/iqra.png'}
           alt="Chat Toggle"
           className="chatbot-icon"
         />
@@ -24,3 +24,4 @@ function App() {
 }
 
 export default App;
+
