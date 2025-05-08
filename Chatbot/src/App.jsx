@@ -14,7 +14,7 @@ function App() {
         onClick={() => setVisible(!visible)}
       >
         <img
-          src={visible ? '/iqra.png' : '/iqra.png'}
+          src={visible ? '/logo.jpg' : '/logo.jpg'}
           alt="Chat Toggle"
           className="chatbot-icon"
         />

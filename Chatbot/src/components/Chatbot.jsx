@@ -72,10 +72,10 @@ function Chatbot({ visible }) {
             <strong>{item.title}</strong>
             <div className="response-buttons">
               {item.spotify && (
-                <button onClick={() => openLink(item.spotify)}>🎧 Spotify</button>
+                <button onClick={() => openLink(item.spotify)}><img className="spotlogo"src='/spotify.png'></img> Spotify<span> &#10230;</span></button>
               )}
               {item.youtube && (
-                <button onClick={() => openLink(item.youtube)}>📺 YouTube</button>
+                <button onClick={() => openLink(item.youtube)}><img className="ytlogo"src='/yt.png'></img>YouTube<span> &#10230;</span></button>
               )}
             </div>
           </div>

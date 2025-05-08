@@ -86,9 +86,11 @@
   
   .response-buttons {
     margin-top: 5px;
+    text-align: center;
+    display: flex;
   }
   
-  .response-buttons button {
+  .response-buttons button{
     margin-right: 6px;
     margin-top: 5px;
     background-color: #081717;
@@ -98,6 +100,9 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    display: flex;
+    width: 38%;
+    text-align: left;
   }
 
   .response-buttons button:hover {
@@ -160,4 +165,15 @@
     background-color: #fee2e2;
     color: #991b1b;
   }
-  
+
+  .spotlogo{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 3px;
+    margin-top: 2px;
+  }
+  .ytlogo{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 2px;
+  }
