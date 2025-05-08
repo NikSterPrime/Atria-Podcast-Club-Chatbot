@@ -15,10 +15,11 @@ def recommend():
     results = []
 
     for item in podcast_data:
-        if query in item["title"].lower():
+        title_match = query in item["title"].lower()
+        tag_match = any(query in tag.lower() for tag in item.get("tags", []))
+        if title_match or tag_match:
             results.append(item)
 
     return jsonify({"results": results})
-
 if __name__ == '__main__':
     app.run(debug=True)
