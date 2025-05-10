@@ -6,7 +6,7 @@ function Chatbot({ visible }) {
   const [query, setQuery] = useState('');
   const [responses, setResponses] = useState([
     {
-      title: "👋 Hi there! I'm your podcast assistant. Ask me about AI, gaming, clubs, or anything at Atria!",
+      title: "👋 Hi there! I am Anthony, your Podcast Assistant. Allow me to assist you in showing you, from our recent episodes to our honourable guests !!",
       spotify: "",
       youtube: "",
       type: "greeting"
