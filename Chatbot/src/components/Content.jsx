@@ -8,9 +8,7 @@ function Content(){
                 <p id="Quote">A Wave of Voices:</p>
                 <p id="subquote">Where Every Story Gets Heard...</p>
             </div>
-            <div className="title-button">
-                <button id="listen-button">Listen Now</button>
-            </div>
+            <button id="listen-button">Listen Now</button>
         </div>
     )
 }

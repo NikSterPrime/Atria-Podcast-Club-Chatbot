@@ -1,9 +1,8 @@
 .latest-episodes {
-  padding: 2rem;
+  max-width: 100%;
+  padding: 4rem 1rem 6rem;
   text-align: center;
-  color: #081717;
-  background-color: #f3f4f6;
-  font-family: "Playfair Display", serif;
+  background-color: #36b8bf;
 }
 
 .latest-episodes h2 {
@@ -12,12 +11,18 @@
 }
 
 .episode-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: 16px;
+  padding: 1.5rem;
   margin: 0 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  transition: transform 0.2s ease;
+}
+
+.episode-card:hover {
+  transform: scale(1.03);
 }
 
 .episode-img {
@@ -54,4 +59,24 @@
 
 .episode-info a:hover {
   background-color: #394747;
+}
+
+.episode-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  height: 100%;
+  max-height: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .episode-card {
+    max-width: 95vw;
+    padding: 1rem;
+  }
+
+  .episode-card iframe {
+    height: 240px;
+  }
 }

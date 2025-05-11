@@ -1,0 +1,44 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.content-folder{
+    padding: auto 0;
+    margin: 10vh;
+}
+
+.foot-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.foot-nav li a{
+    text-decoration: none;
+    color: #060e0e;
+    font-weight: 500;
+    font-size: 2vh;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.foot-logo{
+    list-style: none;
+    padding: 1rem;
+    margin: 5vh;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

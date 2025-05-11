@@ -2,20 +2,21 @@
 @import url('slick-carousel/slick/slick.css');
 @import url('slick-carousel/slick/slick-theme.css');
 
-  .main-page {
+.main-page {
     font-family: "Playfair Display",serif;
     background-color: #f3f4f6;
-    min-height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* allow vertical scroll */
     display: flex;
     flex-direction: column;
-  }
+}
   .Picturebackground_content {
   position: relative;
   background-image: url('/Podcast background.JPG');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  padding: 5vh 0;
   z-index: 1;
 }
 
@@ -38,9 +39,10 @@
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
-  min-height: 100%;
   overflow-x: hidden;
 }
 

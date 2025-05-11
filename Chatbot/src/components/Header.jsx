@@ -9,7 +9,7 @@ function Header() {
     return(
         <div className="Header">
             <div className="left-section">
-                <img id="logoimg" src="/logo.jpg" />
+                <h1>Atria Podcast Club</h1>
             </div>
 
             <div className="center-section">
@@ -23,9 +23,9 @@ function Header() {
 
             <div className="right-section">
                 <ul className="logo-links">
-                    <li><button id="contentbutton" onClick={()=>openLink("https://www.youtube.com/@AtriaPodcastClub")}><img id="ytimg" src="/yt.png" /></button></li>
-                    <li><button id="contentbutton" onClick={()=>openLink("https://www.instagram.com/atriapodcastclub/")}><img id="igimg" src="/instagram.png" /></button></li>
-                    <li><button id="contentbutton" onClick={()=>openLink("https://open.spotify.com/show/4O3UpFRvFwFEWhEWyyciY1?si=c506bfa0520b4e8c")}><img id="spotifyimg" src="/spotify.png" /></button></li>
+                    <li><button id="contentbutton" onClick={()=>openLink("https://www.youtube.com/@AtriaPodcastClub")}><img id="ytimg" src="/yt_logo_mono_dark(only logo).png" /></button></li>
+                    <li><button id="contentbutton" onClick={()=>openLink("https://www.instagram.com/atriapodcastclub/")}><img id="igimg" src="/Instagram_Glyph_White.svg" /></button></li>
+                    <li><button id="contentbutton" onClick={()=>openLink("https://open.spotify.com/show/4O3UpFRvFwFEWhEWyyciY1?si=c506bfa0520b4e8c")}><img id="spotifyimg" src="/Spotify_Primary_Logo_RGB_White.png" /></button></li>
                 </ul>
             </div>
         </div>
