@@ -8,23 +8,28 @@ const openLink = (url) => {
 function Header() {
     return(
         <div className="Header">
-            <img id="logoimg" src="/logo.jpg"></img>
-            <nav>
+            <div className="left-section">
+                <img id="logoimg" src="/logo.jpg" />
+            </div>
+
+            <div className="center-section">
                 <ul className="nav-links">
                     <li><a href="">Home</a></li>
                     <li><a href="">Content</a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Blogs</a></li>
                 </ul>
-            </nav>
-            <nav>
+            </div>
+
+            <div className="right-section">
                 <ul className="logo-links">
-                    <li><button id="contentbutton" onClick={()=>openLink("https://www.youtube.com/@AtriaPodcastClub")}><img id="ytimg" src="/yt.png"></img></button></li>
-                    <li><button id="contentbutton" onClick={()=>openLink("https://www.instagram.com/atriapodcastclub/")}><img id="igimg" src="/instagram.png"></img></button></li>
-                    <li><button id="contentbutton" onClick={()=>openLink("https://open.spotify.com/show/4O3UpFRvFwFEWhEWyyciY1?si=c506bfa0520b4e8c")}><img id="spotifyimg" src="/spotify.png"></img></button></li>
+                    <li><button id="contentbutton" onClick={()=>openLink("https://www.youtube.com/@AtriaPodcastClub")}><img id="ytimg" src="/yt.png" /></button></li>
+                    <li><button id="contentbutton" onClick={()=>openLink("https://www.instagram.com/atriapodcastclub/")}><img id="igimg" src="/instagram.png" /></button></li>
+                    <li><button id="contentbutton" onClick={()=>openLink("https://open.spotify.com/show/4O3UpFRvFwFEWhEWyyciY1?si=c506bfa0520b4e8c")}><img id="spotifyimg" src="/spotify.png" /></button></li>
                 </ul>
-            </nav>
+            </div>
         </div>
+
     )
 }
 

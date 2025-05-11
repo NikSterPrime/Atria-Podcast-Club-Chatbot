@@ -10,8 +10,10 @@ function App() {
 
   return (
     <div className="main-page">
-      <Header />
-      <Content />
+      <div className='Picturebackground_content'>
+        <Header />
+        <Content />
+      </div>
       {/* Chatbot overlay (animated with slide effect) */}
       <Chatbot visible={visible} />
 

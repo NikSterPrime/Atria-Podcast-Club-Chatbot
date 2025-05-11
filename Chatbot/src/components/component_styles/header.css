@@ -1,112 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-.Header{
+
+/* ===== Base Header Layout ===== */
+.Header {
     background-color: transparent;
-    max-height: 15vh;
-    font-family: "Playfair Display",serif;
+    font-family: "Playfair Display", serif;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
     color: white;
+    position: relative;
+    flex-wrap: nowrap;
+}
+
+/* ===== Section Wrappers ===== */
+.left-section,
+.center-section,
+.right-section {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap:10rem;
-    overflow: hidden;
 }
 
-.Header a{
-    text-align: center;
-    font-size: 20px;
+/* Center is absolutely centered */
+.center-section {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#logoimg{
-    max-height: 10vh;
-    margin-top: 1.5vh;
-    padding: 1vb 1vh 1vh 1vh;
-    border-radius: 100px;
-    justify-content: flex-start;
+/* ===== Logo Image ===== */
+#logoimg {
+    height: 8vh;
+    max-height: 60px;
+    width: auto;
+    border-radius: 50%;
 }
-.nav-links{
+
+/* ===== Nav Links ===== */
+.nav-links {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
-    gap: 4vb;
+    flex-direction: row;
+    gap: 2rem;
     align-items: center;
+    justify-content: center;
 }
-.nav-links li a{
+
+.nav-links li a {
     text-decoration: none;
-    color: #060e0e;
+    color: white;
     font-weight: 500;
-    padding: 2vh 2vb;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 }
-.nav-links li a:hover{
+
+.nav-links li a:hover {
     color: #a7b8b8;
 }
-.logo-links{
+
+/* ===== Social Media Links ===== */
+.logo-links {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
+    flex-direction: row;
     gap: 1rem;
     align-items: center;
-}
-.logo-links li a{
-    text-decoration: none;
-    color: #060e0e;
-    font-weight: 500;
-    padding: 0.05rem;
-    transition: color 0.3s ease;
     justify-content: center;
 }
-.logo-links li a:hover{
-    color: #a7b8b8;
-}
-#ytimg{
-    height: 5vh;
-}
-#spotifyimg{
-    height: 3.5vh;
-}
-#igimg{
-    height: 3.5vh;
-}
 
-#contentbutton{
+#contentbutton {
     background-color: transparent;
     border: 0;
+    cursor: pointer;
 }
 
+#ytimg{
+    height: 5vh;
+    max-height: 40px;
+}
+
+#spotifyimg,
+#igimg {
+    height: 3vh;
+    max-height: 40px;
+    width: auto;
+}
+
+/* ===== Responsive Design ===== */
 @media screen and (max-width: 900px) {
     .Header {
         flex-direction: column;
         gap: 1rem;
         padding: 1rem;
-        max-height: none; /* Remove height restriction */
-        flex-wrap: wrap;  /* Allow wrapping */
-        align-items: center;
+        position: static;
+    }
+
+    .center-section {
+        position: static;
+        transform: none;
+    }
+
+    .nav-links,
+    .logo-links {
+        flex-direction: column;
+        gap: 1rem;
     }
 
     #logoimg {
-        max-height: 12vh; /* Increase size for visibility */
+        height: 10vh;
+        max-height: 50px;
         margin: 1rem auto;
         display: block;
     }
 
-    .nav-links, .logo-links {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    #ytimg, #spotifyimg {
-        height: 4.5vh;
-        display: inline-block; /* Ensure they render */
+    #ytimg,
+    #spotifyimg,
+    #igimg {
+        height: 4vh;
+        max-height: 32px;
     }
 }
 
 @media screen and (max-width: 500px) {
     #logoimg {
-        max-height: 14vh;
+        height: 12vh;
+        max-height: 48px;
     }
 
-    #ytimg, #spotifyimg {
-        height: 5vh;
+    #ytimg,
+    #spotifyimg,
+    #igimg {
+        height: 4.5vh;
+        max-height: 28px;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+        padding: 0.4rem 0.8rem;
     }
 }
