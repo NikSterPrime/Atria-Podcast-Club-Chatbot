@@ -1,0 +1,57 @@
+.latest-episodes {
+  padding: 2rem;
+  text-align: center;
+  color: #081717;
+  background-color: #f3f4f6;
+  font-family: "Playfair Display", serif;
+}
+
+.latest-episodes h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.episode-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 0 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.episode-img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+.episode-info {
+  margin-top: 1rem;
+}
+
+.episode-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.episode-info p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.episode-info a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background-color: #081717;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.episode-info a:hover {
+  background-color: #394747;
+}

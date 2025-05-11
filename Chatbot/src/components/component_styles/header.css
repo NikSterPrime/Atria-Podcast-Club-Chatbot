@@ -47,19 +47,20 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 2vh;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #a7b8b8;
+    color: black;
 }
 
 /* ===== Social Media Links ===== */

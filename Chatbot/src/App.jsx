@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Chatbot from './components/Chatbot';
 import Header from './components/Header';
-import Content from './components/Content.jsx'
+import Content from './components/Content.jsx';
+import LatestEpisode from './components/LatestEpisodes.jsx';
 import './styles/Chatbot.css';
 import './styles/App.css';
 
@@ -13,6 +14,9 @@ function App() {
       <div className='Picturebackground_content'>
         <Header />
         <Content />
+      </div>
+      <div className='LatestEpisodes'>
+        <LatestEpisode />   
       </div>
       {/* Chatbot overlay (animated with slide effect) */}
       <Chatbot visible={visible} />

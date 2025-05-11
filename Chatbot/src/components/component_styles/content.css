@@ -4,11 +4,52 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;   
-    font-size: 5vh;
     color: white;
-    margin-top: 0.1%;
-    display: flex; 
+    margin-top: -15vh;
+    display: flex;
+    flex-direction: column;
+}
+.titlequote{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#Quote{
+    font-size: 10vh;
 }
 #subquote{
-    font-size: 2.5vh;
+    font-size: 5vh;
+}
+.title-button{
+    padding: 1vh;
+    position: relative;
+}
+#listen-button{
+    font-family: "Playfair Display",serif;
+    font-size: 2vh;
+    padding: 0.5vh;
+    color: #e8f7f7;
+    background-color: #36b8bf;
+    border-radius: 15px;
+    height: 5vh;
+    width: 15vb;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#listen-button:hover{
+   padding: 0.5vh;
+   border: none;
+   background-color: #36b8bf;
+   color: #e8f7f7;
+   cursor: pointer;
+   font-family:"Playfair Display",serif;
+}
+
+#listen-button:active{
+    background-color: #36b8bf;
+    box-shadow: 0 0 15px 5px rgba(54, 184, 191, 0.95);
 }
