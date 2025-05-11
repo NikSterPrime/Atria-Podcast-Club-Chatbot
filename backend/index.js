@@ -1,12 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const axios = require('axios');
+require('dotenv').config();
+
 const podcasts = require('./podcasts.json');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// === Chatbot route (unchanged) ===
 app.post('/query', (req, res) => {
   const { query } = req.body;
 
@@ -16,14 +20,12 @@ app.post('/query', (req, res) => {
 
   const keywords = query.toLowerCase().split(' ');
 
-  // Match tags to keywords
   const results = podcasts.filter(podcast =>
     podcast.tag.some(tag =>
       keywords.some(keyword => tag.toLowerCase().includes(keyword))
     )
   );
 
-  // Send a simplified result
   const simplified = results.map(p => ({
     title: p.title,
     youtube: p.yturl,
@@ -31,6 +33,22 @@ app.post('/query', (req, res) => {
   }));
 
   res.json(simplified);
+});
+
+// === New YouTube route ===
+app.get('/api/youtube/latest', async (req, res) => {
+  try {
+    const { YOUTUBE_API_KEY, CHANNEL_ID } = process.env;
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=5`;
+
+    const response = await axios.get(url);
+    const videos = response.data.items.filter(item => item.id.kind === "youtube#video");
+
+    res.json(videos);
+  } catch (error) {
+    console.error("YouTube API error:", error.message);
+    res.status(500).json({ error: "Failed to fetch YouTube videos" });
+  }
 });
 
 app.listen(5000, () => {
