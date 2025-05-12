@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 
 function ContentPage() {
-    const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   return (
     <div className='content-page'>
       <div className='headerdiv'>
