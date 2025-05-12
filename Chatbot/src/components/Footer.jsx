@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer">
             <div className="content-folder">
                 <ul className="foot-nav">
-                    <li><a href="">Content</a></li>
+                    <li><a href="./Content-Page.jsx">Content</a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Blogs</a></li>
                 </ul>

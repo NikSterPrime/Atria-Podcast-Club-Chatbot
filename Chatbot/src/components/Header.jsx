@@ -14,8 +14,8 @@ function Header() {
 
             <div className="center-section">
                 <ul className="nav-links">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Content</a></li>
+                    <li><a href="https://www.realtimecolors.com/?colors=f1f9f9-081717-e8f7f7-a7b9b9-40c2c9&fonts=Inter-Inter">Home</a></li>
+                    <li><a href="./Content-Page.jsx">Content</a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Blogs</a></li>
                 </ul>

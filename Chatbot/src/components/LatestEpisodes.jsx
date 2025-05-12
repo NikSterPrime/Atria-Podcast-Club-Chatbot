@@ -39,7 +39,7 @@ function LatestEpisodes() {
             />
             <div className="video-info">
               <h3>{video.snippet.title}</h3>
-              <p>{video.snippet.description.slice(0, 80)}...</p>
+              <p>{video.snippet.description}</p>
             </div>
           </div>
 

@@ -1,0 +1,112 @@
+.youtube-episodes {
+  background-color: #f3f4f6;
+  padding: 3rem 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+.content-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100%;
+  margin:0;
+}
+
+.video-list-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+  /* ADD: allow wrapping and full height */
+  flex-wrap: wrap;
+}
+
+.video-list-card.even {
+  background-color: #ffffff;
+}
+
+.video-list-card.odd {
+  background-color: #e8f1f5;
+}
+
+.video-left iframe {
+  width: 500px;
+  height: 280px;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+
+.video-right {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.video-right h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.video-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;   /* Limit to 3 lines */
+  overflow: hidden;        /* Hide the rest of the text */
+  text-overflow: ellipsis; /* Add ellipsis at the end */
+}
+
+.spotify-btn {
+  background-color: #1DB954; /* Spotify Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.spotify-btn:hover {
+  background-color: #1ed760; /* Lighter Spotify Green */
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .video-list-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .video-left iframe {
+    width: 100%;
+    height: 240px;
+  }
+
+  .video-right {
+    text-align: center;
+  }
+}

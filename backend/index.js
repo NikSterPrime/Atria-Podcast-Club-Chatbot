@@ -54,3 +54,30 @@ app.get('/api/youtube/latest', async (req, res) => {
 app.listen(5000, () => {
   console.log("Server is running on http://localhost:5000");
 });
+
+// === All YouTube Episodes Route ===
+app.get('/api/youtube/all', async (req, res) => {
+  try {
+    const { YOUTUBE_API_KEY, CHANNEL_ID } = process.env;
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=25`;
+
+    const response = await axios.get(url);
+    const videos = response.data.items.filter(item => item.id.kind === "youtube#video");
+    console.log(video.snippet.title);
+    // Include the corresponding Spotify URL from your podcasts.json
+    const enrichedVideos = videos.map(video => {
+      // Match the video title or some other identifier with the podcasts.json data
+      const podcast = podcasts.find(p => p.title === video.snippet.title);
+      return {
+        ...video,
+        spotify: podcast ? podcast.spotifyurl : ''
+      };
+    });
+
+    res.json(enrichedVideos);
+  } catch (error) {
+    console.error("YouTube API error (all):", error.message);
+    res.status(500).json({ error: "Failed to fetch all YouTube videos" });
+  }
+});
+

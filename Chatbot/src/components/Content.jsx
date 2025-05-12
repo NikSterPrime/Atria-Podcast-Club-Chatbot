@@ -1,6 +1,10 @@
 import React from "react";
 import "./component_styles/content.css";
 
+const openLink = (url) => {
+    window.open(url);
+}
+
 function Content(){
     return(
         <div className="Content">
@@ -8,7 +12,7 @@ function Content(){
                 <p id="Quote">A Wave of Voices:</p>
                 <p id="subquote">Where Every Story Gets Heard...</p>
             </div>
-            <button id="listen-button">Listen Now</button>
+            <button id="listen-button" onClick={()=>openLink("./Content-Page.jsx")}>Listen Now</button>
         </div>
     )
 }
