@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import ContactForm from "../components/Contact";
 import Footer from "../components/Footer";
 import "../styles/ContactUs.css";
+import ParticlesAnimation from "../components/ParticleAnimation";
 
 function ContactUs() {
   return (
