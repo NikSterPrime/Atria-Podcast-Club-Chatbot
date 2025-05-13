@@ -12,8 +12,8 @@ function Footer() {
             <div className="content-folder">
                 <ul className="foot-nav">
                     <li><Link to="/Content">Content</Link></li>
-                    <li><a href="">About Us</a></li>
                     <li><a href="">Blogs</a></li>
+                    <li><Link to="/ContactUs">Contact Us</Link></li>
                 </ul>
                 <ul className="foot-logo">
                     <li><button id="contentbutton" onClick={()=>openLink("https://www.youtube.com/@AtriaPodcastClub")}><img id="ytimg" src="/yt_logo_mono_light(logo only).png" /></button></li>

@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Playfair Display", serif;
+}
+
+.headerdiv {
+  background-color: #081717;
+  padding-bottom: 5vh;
+  
+}
+
+.contentdiv{
+    background-color: #081717;
+    padding-bottom: 13.5vh;
+}
+
+.contact-form-section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f3f4f6;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.contact-form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form-section p {
+  margin-bottom: 2rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #081717;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+}
+
+.contact-form textarea {
+  min-height: 120px;        /* ↑ more space to write */
+}
+
+.contact-form button {
+  background-color: #081717;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Playfair Display", serif;
+}
+
+.contact-form button:hover {
+  background-color: #394747;
+}

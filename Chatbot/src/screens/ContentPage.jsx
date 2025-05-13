@@ -11,8 +11,8 @@ function ContentPage() {
     <div className='content-page'>
       <div className='headerdiv'>
         <Header />
+        <YoutubeEpisodes />
       </div>
-      <YoutubeEpisodes />
       <Chatbot visible={visible} />
 
       {/* Toggle Button */}

@@ -33,6 +33,10 @@
     transition: color 0.3s ease;
 }
 
+.foot-nav li a:hover{
+    color:#36b8bf;
+}
+
 .foot-logo{
     list-style: none;
     padding: 1rem;
