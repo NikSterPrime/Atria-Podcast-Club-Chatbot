@@ -63,11 +63,10 @@ app.get('/api/youtube/all', async (req, res) => {
 
     const response = await axios.get(url);
     const videos = response.data.items.filter(item => item.id.kind === "youtube#video");
-    console.log(video.snippet.title);
     // Include the corresponding Spotify URL from your podcasts.json
     const enrichedVideos = videos.map(video => {
       // Match the video title or some other identifier with the podcasts.json data
-      const podcast = podcasts.find(p => p.title === video.snippet.title);
+      const podcast = podcasts.find(p =>p.title.toLowerCase().trim() === video.snippet.title.toLowerCase().trim());
       return {
         ...video,
         spotify: podcast ? podcast.spotifyurl : ''
