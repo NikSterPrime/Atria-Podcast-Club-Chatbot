@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
-import './styles/ContentPage.css';
-import Header from './components/Header';
-import YoutubeEpisodes from './components/YoutubeEpisodes';
-import Footer from './components/Footer';
-import Chatbot from './components/Chatbot';
+import '../styles/ContentPage.css';
+import Header from '../components/Header';
+import YoutubeEpisodes from '../components/YoutubeEpisodes';
+import Footer from '../components/Footer';
+import Chatbot from '../components/Chatbot';
 
 function ContentPage() {
   const [visible, setVisible] = useState(false);

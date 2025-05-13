@@ -1,5 +1,6 @@
 import React from "react";
 import "./component_styles/footer.css";
+import {Link} from "react-router-dom"; 
 
 const openLink = (url) => {
     window.open(url,'_blank');
@@ -10,7 +11,7 @@ function Footer() {
         <div className="footer">
             <div className="content-folder">
                 <ul className="foot-nav">
-                    <li><a href="./ContentPage.jsx">Content</a></li>
+                    <li><Link to="/Content">Content</Link></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Blogs</a></li>
                 </ul>

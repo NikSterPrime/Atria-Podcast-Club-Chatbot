@@ -1,38 +1,20 @@
 import React, { useState } from 'react';
-import Chatbot from './components/Chatbot';
-import Header from './components/Header';
-import Content from './components/Content.jsx';
-import LatestEpisode from './components/LatestEpisodes.jsx';
-import Footer from './components/Footer.jsx';
-import './styles/Chatbot.css';
+import './components/component_styles/Chatbot.css';
 import './styles/App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import Home from './screens/Home';
+import Content from './screens/ContentPage';
 
 function App() {
-  const [visible, setVisible] = useState(false);
 
   return (
-    <div className="main-page">
-      <div className='Picturebackground_content'>
-        <Header />
-        <Content />
-      </div>
-      <LatestEpisode /> 
-      {/* Chatbot overlay (animated with slide effect) */}
-      <Chatbot visible={visible} />
-
-      {/* Toggle Button */}
-      <button
-        className="chatbot-toggle-button"
-        onClick={() => setVisible(!visible)}
-      >
-        <img
-          src={visible ? '/logo.jpg' : '/logo.jpg'}
-          alt="Chat Toggle"
-          className="chatbot-icon"
-        />
-      </button>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Content" element={<Content />} />
+      </Routes>
+    </Router>
   );
 }
 
